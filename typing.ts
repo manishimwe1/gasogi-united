@@ -3,7 +3,7 @@ export type FileType = {
 	filename: string;
 	fullName: string;
 	timestamp: Date;
-	downloadURL: string;
+	downloadUrl: string;
 	type: string;
 	size: number;
 };

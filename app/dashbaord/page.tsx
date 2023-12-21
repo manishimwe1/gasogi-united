@@ -20,7 +20,7 @@ const page = async () => {
 				new Date(
 					doc.data().timestamp?.seconds * 1000,
 				) || undefined,
-			downloadURL: doc.data().downloadURL,
+			downloadUrl: doc.data().downloadUrl,
 			type: doc.data().type,
 			size: doc.data().size,
 		}),

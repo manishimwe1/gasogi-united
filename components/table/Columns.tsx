@@ -48,7 +48,7 @@ export const columns: ColumnDef<FileType>[] = [
 		},
 	},
 	{
-		accessorKey: "downloadURL",
+		accessorKey: "downloadUrl",
 		header: "Link",
 		cell: ({ renderValue, ...props }) => {
 			return (
