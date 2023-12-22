@@ -3,7 +3,6 @@
 import { COLLOR_EXTENSION_MAP } from "@/constants";
 import { FileType } from "@/typing";
 import { ColumnDef } from "@tanstack/react-table";
-import Link from "next/link";
 import prettyBytes from "pretty-bytes";
 import { FileIcon, defaultStyles } from "react-file-icon";
 

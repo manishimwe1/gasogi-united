@@ -33,8 +33,10 @@ const page = async () => {
 			</div>
 
 			<section className=''>
-				<h2 className='font-bold'>all files</h2>
 				<div>
+					<h2 className='font-bold '>
+						All Files
+					</h2>
 					<TableWrapper
 						skeletonLoader={skeletonLoader}
 					/>

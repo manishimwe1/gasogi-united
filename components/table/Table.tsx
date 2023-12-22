@@ -15,6 +15,13 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table";
+import { FileType } from "@/typing";
+import { Button } from "../ui/button";
+import { PencilIcon, TrashIcon } from "lucide-react";
+import { useState } from "react";
+import { useAppStore } from "@/store/store";
+import { DeleModal } from "../DeleteModal";
+import { RenameModal } from "../RenameModal";
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[];
@@ -31,6 +38,38 @@ export function DataTable<TData, TValue>({
 		getCoreRowModel: getCoreRowModel(),
 	});
 
+	const [
+		fileId,
+		setFileId,
+		setRenameModelOpen,
+		setDeleteModelOpen,
+		filename,
+		setFilename,
+		isRenameModelOpen,
+		isDeleteModelOpen,
+	] = useAppStore((state) => [
+		state.fileId,
+		state.setFileId,
+		state.setRenameModelOpen,
+		state.setDeleteModelOpen,
+		state.filename,
+		state.setFilename,
+		state.isRenameModelOpen,
+		state.isDeleteModelOPen,
+	]);
+
+	const handleRename = (
+		fileId: string,
+		filename: string,
+	) => {
+		setFileId(fileId);
+		setRenameModelOpen(true);
+	};
+	const handleDelete = (fileId: string) => {
+		setFileId(fileId);
+		setFilename(filename);
+		setDeleteModelOpen(true);
+	};
 	return (
 		<div className='rounded-md border'>
 			<Table>
@@ -73,6 +112,8 @@ export function DataTable<TData, TValue>({
 										row.getIsSelected() &&
 										"selected"
 									}>
+									<DeleModal />
+									<RenameModal />
 									{row
 										.getVisibleCells()
 										.map((cell) => (
@@ -80,15 +121,78 @@ export function DataTable<TData, TValue>({
 												key={
 													cell.id
 												}>
-												{flexRender(
-													cell
+												{cell.column
+													.id ===
+												"timestamp" ? (
+													<div className='flex flex-col'>
+														<div className='text-sm text-gray-500'>
+															{(
+																cell.getValue() as Date
+															).toLocaleString()}
+														</div>
+													</div>
+												) : cell
 														.column
-														.columnDef
-														.cell,
-													cell.getContext(),
+														.id ===
+												  "filename" ? (
+													<p
+														onClick={() =>
+															handleRename(
+																(
+																	row.original as FileType
+																)
+																	.id,
+																(
+																	row.original as FileType
+																)
+																	.filename,
+															)
+														}
+														className='underline flex items-center text-blue-500 hover:cursor-pointer'>
+														{
+															cell.getValue() as string
+														}{" "}
+														<PencilIcon
+															size={
+																15
+															}
+															className='ml-2'
+														/>
+													</p>
+												) : (
+													flexRender(
+														cell
+															.column
+															.columnDef
+															.cell,
+														cell.getContext(),
+													)
 												)}
 											</TableCell>
 										))}
+									<TableCell
+										key={
+											(
+												row.original as FileType
+											).id
+										}>
+										<Button
+											variant={
+												"outline"
+											}
+											className='hover:bg-red-500'
+											onClick={() =>
+												handleDelete(
+													(
+														row.original as FileType
+													).id,
+												)
+											}>
+											<TrashIcon
+												size={20}
+											/>
+										</Button>
+									</TableCell>
 								</TableRow>
 							))
 					) : (
@@ -96,7 +200,7 @@ export function DataTable<TData, TValue>({
 							<TableCell
 								colSpan={columns.length}
 								className='h-24 text-center'>
-								No results.
+								You have no Fies
 							</TableCell>
 						</TableRow>
 					)}

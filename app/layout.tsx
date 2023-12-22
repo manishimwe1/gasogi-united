@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Toaster } from "react-hot-toast";
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Dropbox clone",
@@ -23,11 +23,12 @@ export default function RootLayout({
 				<body className=''>
 					<ThemeProvider
 						attribute='class'
-						defaultTheme='system'
+						defaultTheme='dark'
 						enableSystem
 						disableTransitionOnChange>
 						<Header />
 						{children}
+						<Toaster />
 					</ThemeProvider>
 				</body>
 			</html>

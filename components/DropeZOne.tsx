@@ -17,6 +17,7 @@ import {
 } from "firebase/storage";
 import { useState } from "react";
 import Dropzone from "react-dropzone";
+import toast from "react-hot-toast";
 
 const DropeZOne = () => {
 	const { isLoaded, isSignedIn, user } = useUser();
@@ -37,8 +38,10 @@ const DropeZOne = () => {
 
 	const uploadPost = async (selectFile: File) => {
 		console.log(">>>STARTING UPLOADING");
+
 		if (loading) return console.log(loading);
 		if (!user) return;
+		const toastId = toast.loading("Uploading...");
 
 		setLoading(true);
 		const docRef = await addDoc(
@@ -59,8 +62,8 @@ const DropeZOne = () => {
 			storage,
 			`users/${user.id}/files/${docRef.id}`,
 		);
-		uploadBytes(imageUrl, selectFile).then(
-			async (snapshot) => {
+		uploadBytes(imageUrl, selectFile)
+			.then(async (snapshot) => {
 				const downloadUrl = await getDownloadURL(
 					imageUrl,
 				);
@@ -77,10 +80,17 @@ const DropeZOne = () => {
 						downloadUrl: downloadUrl,
 					},
 				);
+				toast.success("Done!", {
+					id: toastId,
+				});
 				console.log(">>>DONE....");
 				setLoading(false);
-			},
-		);
+			})
+			.catch(() => {
+				toast.error("Ooops something", {
+					id: toastId,
+				});
+			});
 	};
 
 	const maxSize = 20971520;
