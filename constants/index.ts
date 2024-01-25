@@ -32,3 +32,26 @@ export const NAVLINKS = [
 		link: "/stadium",
 	},
 ];
+
+export const BRANDS = [
+	{
+		src: "/Team.png",
+		title: "TeamViewer",
+		herf: "htpps://teamviewer.com",
+	},
+	{
+		src: "/brand.png",
+		title: "brand",
+		herf: "brand.com",
+	},
+	{
+		src: "/Tezo.png",
+		title: "tezo",
+		herf: "tezo.com",
+	},
+	{
+		src: "/DX.png",
+		title: "dx",
+		herf: "dx.com",
+	},
+];

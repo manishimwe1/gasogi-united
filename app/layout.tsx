@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import { cn } from "@/lib/utils";
 
 const poppins = Poppins({
 	weight: ["400", "500"], // if single weight, otherwise you use array like [400, 500, 700],
@@ -21,7 +22,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={poppins.className}>
+			<body className={cn(poppins.className)}>
 				<NavBar />
 				{children}
 			</body>

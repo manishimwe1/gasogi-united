@@ -49,8 +49,9 @@
 		--ring: 20.5 90.2% 48.2%;
 	}
 }
+
 @layer components {
 	.langMenu {
-		@apply cursor-pointer whitespace-nowrap hover:bg-gray-500/80 py-1 w-full rounded-sm px-3 text-slate-300;
+		@apply cursor-pointer whitespace-nowrap hover:bg-gray-500/80 py-1 w-full rounded-sm px-3 text-slate-300 text-xs md:text-base;
 	}
 }
