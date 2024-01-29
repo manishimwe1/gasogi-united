@@ -31,7 +31,7 @@ const NavBar = () => {
 	return (
 		<header className=''>
 			<MenuBar />
-			<nav className='bg-primary sticky  h-16 px-8  flex  items-center text-[#fff] gap-2'>
+			<nav className='bg-primary sticky  h-16 pl-4 pr-8  flex  items-center text-[#fff] gap-2'>
 				<div className='flex  items-center gap-2'>
 					<Image
 						src='/logo.png'

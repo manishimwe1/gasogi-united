@@ -1,34 +1,25 @@
-import * as React from "react";
+import { ShareIcon } from "@heroicons/react/20/solid";
 
-import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
-	CardDescription,
 	CardFooter,
 	CardHeader,
-	CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "@/components/ui/select";
 import Image from "next/image";
+import Link from "next/link";
 
 export function CardList() {
 	const card = [1, 2, 3, 4];
 	return (
 		<div className='grid grid-cols-1  sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 gap-2 lg:gap-4 w-full '>
 			{card.map((_, i) => (
-				<div className='  h-[350px]  w-[350px] sm:w-full mx-auto overflow-hidden   '>
+				<div
+					key={i}
+					className='  h-[350px]  w-[350px] sm:w-full mx-auto overflow-hidden   '>
 					<Card
 						key={i}
-						className='w-full   px-0 hover:shadow-md hover:shadow-orange-500 transition-all delay-200 duration-200 ease-in-out  cursor-pointer '>
+						className='w-full h-[400px] relative px-0 hover:shadow-md hover:shadow-orange-500 transition-all delay-200 duration-200 ease-in-out  cursor-pointer '>
 						<CardHeader className='w-full h-32'>
 							<div className=' relative  overflow-hidden  w-full h-40 cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1   duration-300'>
 								<Image
@@ -48,7 +39,7 @@ export function CardList() {
 							</h2>
 						</CardContent>
 						<CardFooter className=''>
-							<p className='text-xs text-slate-700 font-normal leading-5 text-justify'>
+							<p className='text-xs text-slate-700 font-normal leading-5 line-clamp-2 text-justify'>
 								Mu mikino y’igikombe
 								cy’amahoro Kuri uyu wa kane
 								18/01/2024. Gasogi United
@@ -63,6 +54,16 @@ export function CardList() {
 								</span>
 							</p>
 						</CardFooter>
+						<div className=' mt-12 flex gap-2 text-xs text-muted-foreground items-center py-2 justify-between px-3'>
+							<div className='flex gap-2'>
+								<p>6h</p>
+								<hr className='w-px h-3  bg-slate-600' />
+								<Link href={"/news"}>
+									news
+								</Link>
+							</div>
+							<ShareIcon className='h-6 w-6' />
+						</div>
 					</Card>
 				</div>
 			))}
