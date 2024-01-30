@@ -1,37 +1,29 @@
 "use client";
 
-import { AlignRight, MenuIcon, X } from "lucide-react";
-import Image from "next/image";
-import {
-	Button,
-	buttonVariants,
-} from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import {
 	Sheet,
 	SheetClose,
 	SheetContent,
-	SheetDescription,
 	SheetFooter,
-	SheetHeader,
-	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { NAVLINKS } from "@/constants";
-import Link from "next/link";
-import MenuBar from "./MenuBar";
-import { usePathname } from "next/navigation";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { MenuIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import MenuBar from "./MenuBar";
 
 const NavBar = () => {
 	const pathname = usePathname();
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<header className=''>
+		<header className='relative'>
 			<MenuBar />
-			<nav className='bg-primary sticky  h-16 pl-4 pr-8  flex  items-center text-[#fff] gap-2'>
+			<nav className='bg-orange-600 z-50 saturate-200 sticky  h-16 pl-4 pr-8  flex  items-center text-[#fff] gap-2'>
 				<div className='flex  items-center gap-2'>
 					<Image
 						src='/logo.png'
@@ -117,7 +109,7 @@ const NavBar = () => {
 						action=''
 						className='flex lg:bg-orange-500/60 bg-none px-2 cursor-pointer items-center rounded-md'>
 						<input
-							className='bg-transparent hidden lg:flex outline-none placeholder:text-orange-900 text-orange-900 border-none px-2 py-1'
+							className='bg-transparent hidden lg:flex outline-none placeholder:text-orange-100 text-orange-900 border-none px-2 py-1'
 							placeholder='Search...'
 						/>
 						<MagnifyingGlassIcon className='h-6 w-6' />
@@ -127,6 +119,8 @@ const NavBar = () => {
 					</form>
 				</div>
 			</nav>
+			<div className='bg-gradient-to-tr z-20 from-slate-500/50 via-transparent to-black/50 w-full absolute inset-0' />
+			<div className='bg-gradient-to-b z-20 from-slate-50 via-transparent rounded-full -mt-36 to-black/0 w-[300px] mx-auto absolute inset-0' />
 		</header>
 	);
 };

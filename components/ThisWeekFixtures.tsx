@@ -5,11 +5,13 @@ import {
 	ArrowLeftCircle,
 	ArrowRightCircle,
 } from "lucide-react";
+import FixturesCard from "./FixturesCard";
+import { fixtures } from "@/constants";
+import { fixture } from "@/typing";
 
 const ThisWeekFixtures = () => {
-	const CardArray = [1, 2, 3, 4, 5];
 	return (
-		<div className='mt-8 w-full bg-[#1a1a1a]  text-white'>
+		<div className='mt-8 w-full bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a] to-[#1a1a1a]/90  text-white '>
 			<div className='py-10 px-5  flex flex-col'>
 				<div className='flex justify-between'>
 					<div>
@@ -19,61 +21,18 @@ const ThisWeekFixtures = () => {
 						</h1>
 					</div>
 					<div className='flex gap-3 mr-20'>
-						<ArrowLeftCircle className='h-8 w-8 text-muted-foreground' />
-						<ArrowRightCircle className='h-8 w-8' />
+						<ArrowLeftCircle className='h-8 w-8 text-muted-foreground hover:-translate-x-1 cursor-pointer hover:transition-transform delay-200 ease-in duration-200' />
+						<ArrowRightCircle className='h-8 w-8 hover:translate-x-1 cursor-pointer hover:transition-transform delay-200 ease-in duration-200' />
 					</div>
 				</div>
-				<div className='grid grid-cols-2 mt-6 md:grid-cols-3 lg:grid-cols-5 gap-[7rem] py-2 overflow-x-hidden'>
-					{CardArray.map((arr) => (
+				<div className='flex gap-2 lg:gap-4 py-2  overflow-x-hidden cursor-pointer '>
+					{fixtures.map((fixture: fixture) => (
 						<div
-							key={arr}
-							className='bg-white rounded-md py-2 border-l-8 border-orange-500 w-[300px] flex'>
-							<div className='flex flex-col px-2'>
-								<p className='text-[12px] text-black/65 font-semibold'>
-									Tomorrow
-								</p>
-								<span className='text-[10px] text-muted-foreground'>
-									Rwandan premier league
-								</span>
-								<div className='flex gap-2 items-center '>
-									<Image
-										src={"/logo.png"}
-										alt='home_team'
-										width={40}
-										height={40}
-										className='object-cover object-center rounded-full'
-									/>
-									<p className='text-[12px] text-muted-foreground font-semibold'>
-										Gasogi U18
-									</p>
-								</div>
-								<div className='flex gap-2 items-center'>
-									<Image
-										src={"/logo.png"}
-										alt='home_team'
-										width={40}
-										height={40}
-										className='object-contain object-center rounded-full'
-									/>
-									<p className='text-[12px] text-muted-foreground font-semibold'>
-										Apr U18
-									</p>
-								</div>
-							</div>
-
-							<div className='border-l ml-4 px-2 flex flex-col'>
-								<p className='text-[11px] text-black/65 font-semibold'>
-									Kick Off
-								</p>
-								<span className='text-[10px] text-muted-foreground'>
-									Pele stadium
-								</span>
-								<Button
-									className='uppercase w-[100px] rounded-full mt-5 text-black/60 !text-[10px] font-semibold'
-									variant={"outline"}>
-									view Fixtures
-								</Button>
-							</div>
+							key={fixture.AwayTeam}
+							className='mt-4 h-32 w-[300px] flex flex-shrink-0 hover:-translate-y-2 hover:transition-transform duration-300 ease-in-out delay-150 hover:shadow-sm rounded-md hover:shadow-slate-400'>
+							<FixturesCard
+								fixture={fixture}
+							/>
 						</div>
 					))}
 				</div>
