@@ -11,7 +11,7 @@ const HeadTitle = ({
 		<div className='flex justify-between items-center pb-3'>
 			<div>
 				<hr className=' w-20 border border-orange-500' />
-				<h3 className='font-extrabold uppercase text-slate-900 text-xl pt-1'>
+				<h3 className='font-extrabold uppercase text-white text-xl pt-1'>
 					{title}
 				</h3>
 			</div>

@@ -1,13 +1,13 @@
-import {
-	NavigationMenu,
-	NavigationMenuContent,
-	NavigationMenuIndicator,
-	NavigationMenuItem,
-	NavigationMenuLink,
-	NavigationMenuList,
-	NavigationMenuTrigger,
-	NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
+// import {
+// 	NavigationMenu,
+// 	NavigationMenuContent,
+// 	NavigationMenuIndicator,
+// 	NavigationMenuItem,
+// 	NavigationMenuLink,
+// 	NavigationMenuList,
+// 	NavigationMenuTrigger,
+// 	NavigationMenuViewport,
+// } from "@/components/ui/navigation-menu";
 import { BRANDS } from "@/constants";
 import { UserIcon } from "@heroicons/react/24/outline";
 import { Globe } from "lucide-react";
@@ -18,7 +18,7 @@ const MenuBar = () => {
 	return (
 		<div className=' bg-[#1a1a1a] shadow-lg shadow-[#0c0b0b] pl-2 pr-4 h-7 flex items-center justify-between'>
 			<div className='flex items-center'>
-				<NavigationMenu>
+				{/* <NavigationMenu>
 					<NavigationMenuList>
 						<NavigationMenuItem className='bg-none'>
 							<NavigationMenuTrigger className='gap-2 bg-none text-slate-400 text-xs'>
@@ -42,9 +42,9 @@ const MenuBar = () => {
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 					</NavigationMenuList>
-				</NavigationMenu>
+				</NavigationMenu> */}
 				<hr className='h-5 border border-slate-600 mr-2' />
-				<NavigationMenu>
+				{/* <NavigationMenu>
 					<NavigationMenuList>
 						<NavigationMenuItem className='bg-none'>
 							<NavigationMenuTrigger className='gap-2 bg-none  text-slate-400'>
@@ -65,7 +65,7 @@ const MenuBar = () => {
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 					</NavigationMenuList>
-				</NavigationMenu>
+				</NavigationMenu> */}
 			</div>
 			<div className=' hidden md:flex items-center gap-2'>
 				{BRANDS.map(({ src, title, herf }) => (

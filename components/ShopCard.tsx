@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const ShopCard = () => {
 	return (
-		<div className='w-1/2 relative bg-gradient-to-tr from-black/90 saturate-150 via-black to-[#1a331be6] pb-4 rounded-md shadow-md shadow-black/50 '>
+		<div className='w-1/2 relative shadow-md shadow-orange-300/5 bg-gradient-to-tr from-black/90 via-black to-[#1a331be6] pb-4 rounded-md '>
 			<div className='grid grid-cols-3 gap-5 p-10 relative'>
 				<div className=' h-[200px] -mt-10 relative '>
 					<Image

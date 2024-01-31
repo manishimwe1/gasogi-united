@@ -25,7 +25,7 @@ const ShorterCard = ({ long }: { long?: boolean }) => {
 							alt='cardImage'
 							width={1000}
 							height={100}
-							className=' object-contain object-center   rounded-t-md saturate-150'
+							className=' object-contain object-center   rounded-t-md '
 						/>
 						<div className=' absolute bottom-0 bg-gradient-to-b from-orange-500/10 via-orange-500/30 to-orange-500/50 h-3 w-full' />
 					</div>

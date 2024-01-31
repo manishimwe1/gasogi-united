@@ -117,7 +117,7 @@ export default function Home() {
 					))}
 				</div>
 			</section>
-			<section className='container mx-auto flex flex-col gap-7'>
+			<section className='container mx-auto flex flex-col gap-1 mt-1'>
 				<HeadTitle
 					title='The academy'
 					link='Find more on academy'
@@ -126,7 +126,7 @@ export default function Home() {
 					<VideoCard />
 					<VideoCard />
 				</div>
-				<div className='grid grid-cols-1 sm:grid-cols-2 gap-2.5 lg:gap-5 lg:grid-cols-4'>
+				<div className='mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5 lg:gap-5 lg:grid-cols-4'>
 					{theAcademyInfo.map((matcHighLight) => (
 						<div
 							key={matcHighLight.title}
