@@ -22,19 +22,23 @@ const DescriptionCard = ({
 	return (
 		<div
 			className={cn(
-				" group absolute bottom-0 inset-x-0 px-4 pb-3  duration-200 ease-in-out  flex flex-col gap-3 bg-gradient-to-t from-black/80 via-black/60 to-black/0 rounded-b-md",
+				" group absolute bottom-0 inset-x-0 px-4 pb-0 lg:pb-3  duration-200 ease-in-out  flex flex-col  lg:gap-3 bg-gradient-to-t from-black/80 via-black/60 to-black/0 rounded-b-md",
 				lg ? "px-12" : "",
 			)}>
 			{category === "Match coverage" ? (
 				<span className='absolute py-[2px] top-0 left-0 w-0 h-[2px] bg-orange-400 transition-all group-hover:w-[50%] duration-1000 delay-500 ' />
 			) : (
-				<PlayIcon className='h-10 w-10 bg-orange-500 text-white rounded-md p-2' />
+				<PlayIcon className='h-6 lg:h-10 w-6 lg:w-10 bg-orange-500 text-white rounded-md p-1 lg:p-2' />
 			)}
 			<p
 				className={cn(
 					"font-bold text-slate-50  uppercase tracking-wider py-2",
-					sm ? "text-lg" : "text-xl",
-					lg ? "text-3xl" : "text-xl",
+					sm
+						? "text-sm lg:text-lg"
+						: "text-sm lg:text-xl",
+					lg
+						? "text-sm lg:text-3xl"
+						: " text-sm lg:text-xl",
 				)}>
 				{title}
 			</p>

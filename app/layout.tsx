@@ -25,7 +25,7 @@ export default function RootLayout({
 			<body
 				className={cn(
 					poppins.className,
-					"bg-[#03040a] saturate-150 pb-20",
+					"bg-slate-950 saturate-150 pb-20",
 				)}>
 				<NavBar />
 				{children}

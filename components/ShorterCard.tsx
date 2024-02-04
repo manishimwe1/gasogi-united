@@ -12,11 +12,13 @@ import { cn } from "@/lib/utils";
 
 const ShorterCard = ({ long }: { long?: boolean }) => {
 	return (
-		<div className='  h-[350px]  w-[350px] sm:w-full mx-auto   '>
+		<div className='  w-full  sm:w-full mx-auto relative'>
 			<Card
 				className={cn(
 					"w-full  relative px-0 cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 duration-300 hover:shadow-md hover:shadow-slate-400",
-					long ? "h-[500px]" : "h-[400px]",
+					long
+						? " h-[300px]  lg:h-[450px]"
+						: "h-[400px]",
 				)}>
 				<CardHeader className='w-full h-32'>
 					<div className=' relative  overflow-hidden  w-full h-40 '>
@@ -25,7 +27,9 @@ const ShorterCard = ({ long }: { long?: boolean }) => {
 							alt='cardImage'
 							width={1000}
 							height={100}
-							className=' object-contain object-center   rounded-t-md '
+							className={cn(
+								"object-contain object-center rounded-t-md",
+							)}
 						/>
 						<div className=' absolute bottom-0 bg-gradient-to-b from-orange-500/10 via-orange-500/30 to-orange-500/50 h-3 w-full' />
 					</div>
@@ -52,15 +56,14 @@ const ShorterCard = ({ long }: { long?: boolean }) => {
 				</CardFooter>
 				<div
 					className={cn(
-						" flex gap-2 text-xs text-muted-foreground items-center py-2 justify-between px-3",
-						long ? "mt-36" : "mt-24 ",
+						" flex gap-2 text-xs text-muted-foreground items-center py-2 justify-between px-3 absolute bottom-0 inset-x-0",
 					)}>
 					<div className='flex gap-2'>
 						<p>6h</p>
 						<hr className='w-px h-3  bg-slate-600' />
 						<Link href={"/news"}>news</Link>
 					</div>
-					<ShareIcon className='h-6 w-6' />
+					<ShareIcon className='h-6 w-6 lg:mr-2' />
 				</div>
 			</Card>
 		</div>

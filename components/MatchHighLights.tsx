@@ -13,7 +13,7 @@ const MatchHighLights = ({
 	matcHighLight: { imgSrc, title, href, category },
 }: props) => {
 	return (
-		<div className=' group relative rounded-md w-full h-[450px] transition-all ease-out hover:delay-500  z-50  hover:scale-105 duration-1000  shadow-sm cursor-pointer'>
+		<div className=' group relative rounded-md w-full h-[300px] lg:h-[450px] transition-all ease-out hover:delay-500  z-50  hover:scale-105 duration-1000  shadow-sm cursor-pointer'>
 			<Image
 				src={imgSrc}
 				fill

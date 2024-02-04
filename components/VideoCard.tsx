@@ -7,24 +7,24 @@ import DescriptionCard from "./DescriptionCard";
 import { cn } from "@/lib/utils";
 
 const VideoCard = ({
-	sm,
+	lg,
 	rounded,
 }: {
-	sm?: boolean;
+	lg?: boolean;
 	rounded?: boolean;
 }) => {
 	return (
-		<div className='overflow-hidden rounded-md'>
+		<div className='overflow-hidden rounded-md  h-full '>
 			<div
 				className={cn(
-					"relative cursor-pointer  ",
-					sm ? "h-[500px]" : "",
+					"relative cursor-pointer   ",
+					lg ? "lg:h-[500px] " : "",
 					rounded ? "rounded-md" : "rounded-none",
 				)}>
 				<video
 					// autoPlay
 					className={cn(
-						" transition-all ease-out hover:delay-100 group-hover:scale-105 z-50  hover:scale-105 duration-500  shadow-sm cursor-pointer h-48 lg:h-fit w-full object-cover shadow-slate-600",
+						" transition-all ease-out hover:delay-100 group-hover:scale-105 z-50  hover:scale-105 duration-500  shadow-sm cursor-pointer h-fit  w-full object-cover shadow-slate-600",
 						rounded
 							? "rounded-md"
 							: "rounded-none",

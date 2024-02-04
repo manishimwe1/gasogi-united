@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const CardComponent = () => {
 	return (
-		<div className=' group cursor-pointer md:w-1/2 hover:shadow-md hover:border-none hover:rounded-md hover:shadow-slate-500 w-full  border rounded-md  bg-white '>
-			<div className='flex gap-4 rounded-l-md'>
+		<div className=' group cursor-pointer w-full  hover:shadow-md hover:border-none hover:rounded-md hover:shadow-slate-500 h-full rounded-md  bg-white '>
+			<div className='flex gap-4 rounded-l-md  py-[9px] w-full'>
 				<div className='w-1/2  overflow-hidden h-full  relative rounded-l-md'>
-					<div className=' h-[372px] relative rounded-l-md'>
+					<div className=' h-[238px] lg:h-[372px] relative rounded-l-md'>
 						<Image
 							src={"/image.jpeg"}
 							alt='cardImage'
@@ -19,10 +19,10 @@ const CardComponent = () => {
 				<div className='w-1/2 p-5 relative'>
 					<hr className=' group-hover:w-28 group-hover:transition-transform duration-500 group-hover:ease-in delay-500 w-20 border border-orange-500' />
 
-					<h2 className='text-xl uppercase font-bold font-sans text-gray-900 '>
+					<h2 className=' text-sm  lg:text-xl uppercase font-bold font-sans text-gray-900 '>
 						Mu mikino y’igikombe cy’amahoro
 					</h2>
-					<p className='text-xs mb-4 text-slate-700 font-normal leading-5 text-justify line-clamp-4'>
+					<p className='md:text-xs text-[11px] mb-4 text-slate-700 font-normal leading-snug lg:leading-5  lg:text-justify line-clamp-4'>
 						Mu mikino y’igikombe cy’amahoro Kuri
 						uyu wa kane 18/01/2024. Gasogi
 						United irahura na Muhazi FC kuri
@@ -31,26 +31,19 @@ const CardComponent = () => {
 						UBUNTUU!!!!🎊 Muze dushyigikire
 						Ikipe yacu!!{" "}
 					</p>
-					<span className='text-orange-600 mt-10 hover:underline hover:underline-offset-4 cursor-pointer'>
+					<span className='text-orange-600 mt-10 hover:underline hover:underline-offset-4 cursor-pointer text-xs md:teb'>
 						#Ibyishimoniyontego
 					</span>
-					<div className='absolute bottom-0 inset-x-0 flex gap-2 text-xs text-muted-foreground items-center py-2 justify-between px-3'>
+					<div className='absolute bottom-2 lg:bottom-0 inset-x-0 flex gap-2 text-xs text-muted-foreground items-center  justify-between px-3'>
 						<div className='flex gap-2'>
-							<p>6h</p>
+							<p className='text-xs'>6h</p>
 							<hr className='w-px h-3  bg-slate-600' />
 							<Link href={"/news"}>news</Link>
 						</div>
-						<ShareIcon className='h-6 w-6' />
+						<ShareIcon className='-4 lg:h-6 w-4 lg:w-6' />
 					</div>
 				</div>
 			</div>
-			{/* <Card className='flex justify-between items-center h-full border border-red-900'>
-				<CardHeader className='h-96 relative w-1/2'>
-				</CardHeader>
-
-				<CardFooter className='w-1/2'>
-				</CardFooter>
-			</Card> */}
 		</div>
 	);
 };

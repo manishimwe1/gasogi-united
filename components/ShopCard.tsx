@@ -4,9 +4,9 @@ import { Button } from "./ui/button";
 
 const ShopCard = () => {
 	return (
-		<div className='w-1/2 relative shadow-md shadow-orange-300/5 bg-gradient-to-tr from-black/90 via-black to-[#1a331be6] pb-4 rounded-md '>
-			<div className='grid grid-cols-3 gap-5 p-10 relative'>
-				<div className=' h-[200px] -mt-10 relative '>
+		<div className='w-full   relative shadow-md shadow-orange-300/5 bg-gradient-to-tr from-black/90 via-black to-[#1a331be6] pb-4 rounded-md '>
+			<div className='grid grid-cols-3 gap-5 p-6 relative'>
+				<div className=' h-[180px] -mt-10 relative '>
 					<Image
 						src={"/image.jpeg"}
 						alt='cardImage'
@@ -31,15 +31,16 @@ const ShopCard = () => {
 					/>
 				</div>
 				<div className='absolute bottom-0 inset-x-0 z-50 bg-gradient-to-t from-black/70 via-black/40 to-transparent h-full w-full ' />
-				<div className='absolute bottom-0 p-4 ml-5 text-white z-50'>
+				<div className='absolute bottom-0 p-4 ml-2 text-white z-50'>
 					<div className='flex gap-2 items-center z-50'>
 						<Image
 							src={"/logo.png"}
 							width={60}
 							height={60}
 							alt='logo'
+							className='hidden lg:block'
 						/>
-						<h3 className='text-sm font-sans font-bold text-muted-foreground '>
+						<h3 className='text-xs md:text-sm font-sans font-bold text-muted-foreground '>
 							<span className='text-orange-500 saturate-200'>
 								GASOGI
 							</span>
@@ -48,17 +49,18 @@ const ShopCard = () => {
 						</h3>
 					</div>
 					<div className='flex flex-col gap-3 z-50'>
-						<h1 className='font-bold tracking-widest text-lg'>
+						<h1 className='font-bold tracking-widest text-sm lg:text-lg'>
 							ATTACK 2024
 						</h1>
 						<Button
-							className='text-black'
-							variant={"outline"}>
+							size={"sm"}
+							className='text-black '
+							variant={"secondary"}>
 							SHOP HERE
 						</Button>
 					</div>
 				</div>
-				<div className='absolute top-5 right-2'>
+				<div className='hidden lg:block absolute top-5 right-2'>
 					<div className=' px-4 flex items-center gap-3 '>
 						<Image
 							src={"/brand.png"}

@@ -8,7 +8,7 @@ import { Button, buttonVariants } from "./ui/button";
 
 const MatchReviewer = () => {
 	return (
-		<div className='border-2 h-[600px] w-full'>
+		<div className=' h-[600px] w-full'>
 			<div className='w-full h-[600px] relative'>
 				<Carousel
 					showThumbs={false}
