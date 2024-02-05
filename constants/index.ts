@@ -1,208 +1,159 @@
-export const COLLOR_EXTENSION_MAP: {
-	[key: string]: string;
-} = {
-	pdf: "#2596be",
-	mpeg: "#0e0700",
-	mp3: "#f2c685",
-	png: "#2f799c",
-	gif: "#0e0d09",
-	svg: "#faf2ef",
-	mp4: "#033067",
-	jpg: "#9cbac5",
-};
+import { fixture } from "@/typing";
 
-// const data = [
-//   {
-//     id: '8OrvlxoaRATHETufhFhs',
-//     fileName: '8OrvlxoaRATHETufhFhs',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:09:26.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 210717
-//   },
-//   {
-//     id: 'Hr5thn0sIE6Z1rLv9CUq',
-//     fileName: 'Hr5thn0sIE6Z1rLv9CUq',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:15:16.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 338011
-//   },
-//   {
-//     id: 'e6zNFBd0g5wc52H9wJMq',
-//     fileName: 'e6zNFBd0g5wc52H9wJMq',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:03:44.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 1395074
-//   },
-//   {
-//     id: 'ejwC27OmKeMwakz5Itee',
-//     fileName: 'ejwC27OmKeMwakz5Itee',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:18:36.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 338011
-//   },
-//   {
-//     id: 'mnorgVMnSRq2ZO5Bkxa9',
-//     fileName: 'mnorgVMnSRq2ZO5Bkxa9',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:21:34.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 212706
-//   },
-//   {
-//     id: 'q6Pp8oSbUXGphxP6q5t8',
-//     fileName: 'q6Pp8oSbUXGphxP6q5t8',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:20:39.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 95411
-//   },
-//   {
-//     id: 'qvOwy8nMfLYpRZ7xlfL8',
-//     fileName: 'qvOwy8nMfLYpRZ7xlfL8',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:18:25.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 360697
-//   }
-// ],
-// [
-//   {
-//     id: '8OrvlxoaRATHETufhFhs',
-//     fileName: '8OrvlxoaRATHETufhFhs',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:09:26.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 210717
-//   },
-//   {
-//     id: 'Hr5thn0sIE6Z1rLv9CUq',
-//     fileName: 'Hr5thn0sIE6Z1rLv9CUq',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:15:16.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 338011
-//   },
-//   {
-//     id: 'e6zNFBd0g5wc52H9wJMq',
-//     fileName: 'e6zNFBd0g5wc52H9wJMq',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:03:44.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 1395074
-//   },
-//   {
-//     id: 'ejwC27OmKeMwakz5Itee',
-//     fileName: 'ejwC27OmKeMwakz5Itee',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:18:36.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 338011
-//   },
-//   {
-//     id: 'mnorgVMnSRq2ZO5Bkxa9',
-//     fileName: 'mnorgVMnSRq2ZO5Bkxa9',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:21:34.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 212706
-//   },
-//   {
-//     id: 'q6Pp8oSbUXGphxP6q5t8',
-//     fileName: 'q6Pp8oSbUXGphxP6q5t8',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:20:39.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 95411
-//   },
-//   {
-//     id: 'qvOwy8nMfLYpRZ7xlfL8',
-//     fileName: 'qvOwy8nMfLYpRZ7xlfL8',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:18:25.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 360697
-//   }
-// ]
-// [
-//   {
-//     id: '8OrvlxoaRATHETufhFhs',
-//     fileName: '8OrvlxoaRATHETufhFhs',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:09:26.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 210717
-//   },
-//   {
-//     id: 'Hr5thn0sIE6Z1rLv9CUq',
-//     fileName: 'Hr5thn0sIE6Z1rLv9CUq',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:15:16.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 338011
-//   },
-//   {
-//     id: 'e6zNFBd0g5wc52H9wJMq',
-//     fileName: 'e6zNFBd0g5wc52H9wJMq',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:03:44.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 1395074
-//   },
-//   {
-//     id: 'ejwC27OmKeMwakz5Itee',
-//     fileName: 'ejwC27OmKeMwakz5Itee',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:18:36.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 338011
-//   },
-//   {
-//     id: 'mnorgVMnSRq2ZO5Bkxa9',
-//     fileName: 'mnorgVMnSRq2ZO5Bkxa9',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:21:34.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 212706
-//   },
-//   {
-//     id: 'q6Pp8oSbUXGphxP6q5t8',
-//     fileName: 'q6Pp8oSbUXGphxP6q5t8',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:20:39.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 95411
-//   },
-//   {
-//     id: 'qvOwy8nMfLYpRZ7xlfL8',
-//     fileName: 'qvOwy8nMfLYpRZ7xlfL8',
-//     fullName: 'Manishimwe M Emmy',
-//     timestamp: 2023-12-20T14:18:25.000Z,
-//     downloadURL: undefined,
-//     type: 'image/png',
-//     size: 360697
-//   }
-// ]
+export const NAVLINKS = [
+	{
+		label: "Latest",
+		link: "/latest",
+	},
+	{
+		label: "Urubabye-Igwe",
+		link: "/Urubabye-igwe",
+	},
+	{
+		label: "Shop",
+		link: "/Shop",
+	},
+	{
+		label: "Fixtures",
+		link: "/fixtures",
+	},
+	{
+		label: "Tickets",
+		link: "/tickets",
+	},
+	{
+		label: "Gasogi play",
+		link: "/gasogi-play",
+	},
+	{
+		label: "Players",
+		link: "/gasogi-play",
+	},
+	{
+		label: "Stadium",
+		link: "/stadium",
+	},
+];
+
+export const BRANDS = [
+	// {
+	// 	src: "/Team.png",
+	// 	title: "TeamViewer",
+	// 	herf: "htpps://teamviewer.com",
+	// },
+	{
+		src: "/brand.png",
+		title: "brand",
+		herf: "brand.com",
+	},
+	{
+		src: "/Tezo.png",
+		title: "tezo",
+		herf: "tezo.com",
+	},
+	{
+		src: "/DX.png",
+		title: "dx",
+		herf: "dx.com",
+	},
+];
+
+export const matcHighLights = [
+	{
+		imgSrc: "/image.jpeg",
+		title: "Full 90:Gasogi Inywa ikipe itayibabariye",
+		href: "#",
+		category: "Match highlights",
+	},
+	{
+		imgSrc: "/image.jpeg",
+		title: "Enterview: KNC abigarukaho",
+		href: "#",
+		category: "Match highlights",
+	},
+	{
+		imgSrc: "/image.jpeg",
+		title: "Full 90:Gasogi inganya ",
+		href: "#",
+		category: "Match highlights",
+	},
+	{
+		imgSrc: "/image.jpeg",
+		title: "Full 90:Gasogi Inywa ikipe itayibabariye",
+		href: "#",
+		category: "Match coverage",
+	},
+];
+export const theAcademyInfo = [
+	{
+		imgSrc: "/image.jpeg",
+		title: "Full 90:Gasogi Inywa ikipe itayibabariye",
+		href: "#",
+		category: "Match coverage",
+	},
+	{
+		imgSrc: "/image.jpeg",
+		title: "Enterview: KNC abigarukaho",
+		href: "#",
+		category: "Match news",
+	},
+	{
+		imgSrc: "/image.jpeg",
+		title: "Full 90:Gasogi inganya ",
+		href: "#",
+		category: "Match features",
+	},
+	{
+		imgSrc: "/image.jpeg",
+		title: "Full 90:Gasogi Inywa ikipe itayibabariye",
+		href: "#",
+		category: "Match coverage",
+	},
+];
+
+export const HeroImages = [
+	{ src: "/image.jpeg", alt: "Smartwatch" },
+	{
+		src: "/image.jpeg",
+		alt: "bag",
+	},
+	{ src: "/image.jpeg", alt: "lamp" },
+	{ src: "/image.jpeg", alt: "air fryer" },
+	{ src: "/image.jpeg", alt: "chair" },
+];
+export const homeTemName = "Gasogi United";
+
+export const fixtures: fixture[] = [
+	{
+		homeTeam: "Gasogi United",
+		AwayTeam: "As Kigali",
+	},
+	{
+		homeTeam: "Apr Fc",
+		AwayTeam: "Gasogi United",
+	},
+	{
+		homeTeam: "Gasogi United",
+		AwayTeam: "Kiyovu",
+	},
+	{
+		homeTeam: "Gasogi United",
+		AwayTeam: "Espoir",
+	},
+	{
+		homeTeam: "Gasogi United",
+		AwayTeam: "Sun Rise",
+	},
+	{
+		homeTeam: "Muhazi united",
+		AwayTeam: "Gasogi United",
+	},
+	{
+		homeTeam: "Gasogi United",
+		AwayTeam: "Rayon Sport Fc",
+	},
+	{
+		homeTeam: "Gasogi United",
+		AwayTeam: "Apr Fc",
+	},
+];
